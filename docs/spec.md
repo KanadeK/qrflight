@@ -33,7 +33,7 @@ families and scenarios deterministically, and never includes absolute local path
 
 ## Technology
 
-- Python 3.11-3.13 and `hatchling` for a pure-Python wheel.
+- Python 3.12-3.13 and `hatchling` for a pure-Python wheel.
 - Pillow for bounded image loading and report thumbnails.
 - NumPy/OpenCV for geometry, metrics, transformations and one decoder.
 - ZXing-C++ Python bindings for an independent decoder.

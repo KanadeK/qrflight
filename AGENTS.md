@@ -7,4 +7,3 @@
 - Add a failing behavioral test before changing analyzer, degradation, decoder or exit-code behavior.
 - Run `python scripts/verify.py` before a release commit.
 - Never commit generated build directories, credentials, absolute user paths or `Co-authored-by` trailers.
-

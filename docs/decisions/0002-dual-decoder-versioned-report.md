@@ -38,4 +38,3 @@ Rejected because formats would eventually disagree on counts, ordering or thresh
 - Decoder disagreement is visible and actionable.
 - Reporter determinism and parity can be contract-tested.
 - Schema changes must be additive within 1.x or receive a new major schema version.
-
