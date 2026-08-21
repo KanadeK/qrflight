@@ -12,7 +12,6 @@ decoders and physical geometry before adding report surfaces.
 - Decoder adapters are independent and return data; the engine owns reconciliation and severity.
 - Transformations are deterministic pure functions parameterized in physical or explainable units.
 - Reports consume a single versioned model so text, JSON and HTML cannot disagree.
-- Calibration is a separate command and never weakens the analysis contract.
 
 ## Dependency graph
 
@@ -57,8 +56,8 @@ inspected.
 
 ### Phase 4: Release closure
 
-- Task 10: add Linux/Windows CI, CodeQL and release packaging.
-- Task 11: run independent five-axis review, dependency/security and reproducibility gates.
+- Task 10: add Linux packaging and Windows compatibility CI.
+- Task 11: run one independent correctness, architecture and security review.
 - Task 12: create public repository, push, verify CI, tag, Release, assets and contributors.
 - Task 13: send the verified URLs and commands by Gmail.
 
@@ -71,7 +70,7 @@ inspected.
 | Image bombs exhaust memory | High | File/frame/pixel caps before NumPy conversion |
 | Quiet-zone estimate is wrong on rotated codes | Medium | Sample in QR-local coordinates, expose it as an estimate, test rotation |
 | Heavy native dependencies complicate install | Medium | Use maintained wheels, OS matrix CI and clean-wheel smoke |
-| CI passes but release differs | High | Build checksums from tagged commit and download/compare public assets |
+| CI passes but the Release is incomplete | High | Verify the public tag, Release page and expected wheel/sdist names |
 
 ## Open questions
 

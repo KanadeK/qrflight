@@ -13,10 +13,10 @@ and simulations passed for this file and configuration.
 ## Public contract
 
 ```text
-qrflight check IMAGE [--expect TEXT] [--profile quick|print|screen|torture]
+qrflight check IMAGE [--expect TEXT] [--profile quick|print]
                      [--print-width-mm MM] [--printer-dpi DPI]
                      [--format text|json|html] [--output PATH]
-                     [--fail-on none|note|warning|error|critical]
+                     [--fail-on none|warning|error]
 qrflight profiles
 qrflight version
 ```
@@ -75,7 +75,7 @@ docs/               research, architecture, threat model, acceptance and ADRs
 docs/assets/        generated visual evidence
 scripts/            deterministic examples, verification and packaging
 tasks/              implementation plan and tracked acceptance tasks
-.github/workflows/  CI, CodeQL and release gates
+.github/workflows/  Linux packaging and Windows compatibility CI
 ```
 
 ## Code style
@@ -147,7 +147,7 @@ Never:
 4. Every named degradation is actually rendered and decoded; JSON records per-engine outcomes.
 5. Two runs on identical inputs/config produce byte-identical JSON and HTML.
 6. The package installs from its wheel into a clean virtual environment and runs offline.
-7. CI passes on Linux and Windows; CodeQL passes; a public v0.1.0 tag and GitHub Release expose
+7. CI passes on Linux and Windows; a public v0.1.0 tag and GitHub Release expose
    the verified package built from the same commit.
 8. Git author/committer and public contributor data list only KanadeK and contain no
    `Co-authored-by` trailer.

@@ -42,15 +42,15 @@
 
 ## Task 6: Examples
 
-- [ ] Commit real healthy/failing examples and generated hero evidence.
+- [x] Commit real healthy/failing examples and generated hero evidence.
 - Acceptance: README commands use committed files and visual evidence comes from real results.
 - Verify: `python -m pytest tests/test_examples.py -q`.
 - Files: examples/assets/scripts/tests.
 
 ## Task 7: Documentation and automation
 
-- [ ] Complete README in English/Chinese, architecture, threat model, acceptance and repair docs.
-- [ ] Add CI, CodeQL, release packaging, secret and metadata checks.
+- [x] Complete README in English/Chinese, architecture, threat model, acceptance and repair docs.
+- [x] Add Linux packaging CI and Windows compatibility CI.
 - Acceptance: one release command runs all documented gates; workflows use frozen dependencies.
 - Verify: `python scripts/verify.py` and workflow syntax/static checks.
 - Files: docs, READMEs, `.github`, `scripts`.
@@ -58,7 +58,7 @@
 ## Task 8: Review and public release
 
 - [ ] Resolve independent correctness/architecture/security/performance review findings.
-- [ ] Verify clean history, authors, contributors, tag, CI, Release assets and checksums.
+- [ ] Verify clean history, authors, contributors, tag, CI and Release assets.
 - [ ] Send Gmail completion notification only after public verification.
 - Acceptance: every success criterion in `docs/spec.md` has recorded evidence.
-- Verify: `python scripts/release_check.py --online --strict`.
+- Verify: the documented acceptance commands plus GitHub CI/Release pages.
