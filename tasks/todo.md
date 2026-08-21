@@ -26,8 +26,8 @@
 
 ## Task 4: Deterministic degradation matrix
 
-- [ ] Implement bounded scenario families and named profiles.
-- [ ] Decode every transformed image with both engines.
+- [x] Implement bounded scenario families and named profiles.
+- [x] Decode every transformed image with both engines.
 - Acceptance: transformations are byte-deterministic and parameters appear in results.
 - Verify: `python -m pytest tests/test_degrade.py tests/test_engine.py -q`.
 - Files: `src/qrflight/degrade.py`, `src/qrflight/profiles.py`, engine/tests.

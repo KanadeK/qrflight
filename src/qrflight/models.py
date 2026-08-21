@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Literal
 
 import numpy as np
 from numpy.typing import NDArray
@@ -43,3 +44,17 @@ class StaticAnalysis:
     contrast: float | None
     printer_dots_per_module: float | None
     findings: tuple[Finding, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class Scenario:
+    name: str
+    family: str
+    value: float
+
+
+@dataclass(frozen=True, slots=True)
+class ScenarioResult:
+    scenario: Scenario
+    status: Literal["pass", "partial", "fail"]
+    decoders: tuple[DecoderResult, ...]
