@@ -10,16 +10,16 @@
 
 ## Task 2: Safe load and cross-decode
 
-- [ ] Enforce byte, pixel, format and frame limits.
-- [ ] Decode with OpenCV and ZXing-C++ and reconcile payloads.
+- [x] Enforce byte, pixel, format and frame limits.
+- [x] Decode with OpenCV and ZXing-C++ and reconcile payloads.
 - Acceptance: both engines match healthy payload; malformed and oversized inputs fail safely.
 - Verify: `python -m pytest tests/test_io.py tests/test_decode.py -q`.
 - Files: `src/qrflight/io.py`, `src/qrflight/decode.py`, corresponding tests.
 
 ## Task 3: Static print-readiness metrics
 
-- [ ] Measure module count/pixels, quiet zone, contrast and physical printer dots.
-- [ ] Emit targeted findings with measured/required values.
+- [x] Measure module count/pixels, quiet zone, contrast and physical printer dots.
+- [x] Emit targeted findings with measured/required values.
 - Acceptance: healthy/cropped/fractionally scaled cases are distinguished.
 - Verify: `python -m pytest tests/test_analyze.py -q`.
 - Files: `src/qrflight/analyze.py`, `src/qrflight/geometry.py`, tests.
