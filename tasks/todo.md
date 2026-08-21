@@ -34,8 +34,8 @@
 
 ## Task 5: Reports and CLI
 
-- [ ] Implement canonical report model and deterministic text/JSON/HTML renderers.
-- [ ] Implement stable commands, validation and exit codes.
+- [x] Implement canonical report model and deterministic text/JSON/HTML renderers.
+- [x] Implement stable commands, validation and exit codes.
 - Acceptance: formats agree; HTML escapes payloads; repeated files are byte-identical.
 - Verify: `python -m pytest tests/test_report.py tests/test_cli.py -q`.
 - Files: `src/qrflight/report.py`, `src/qrflight/cli.py`, tests.

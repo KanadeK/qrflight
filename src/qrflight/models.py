@@ -58,3 +58,19 @@ class ScenarioResult:
     scenario: Scenario
     status: Literal["pass", "partial", "fail"]
     decoders: tuple[DecoderResult, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class AnalysisReport:
+    schema_version: str
+    tool_version: str
+    input_name: str
+    input_format: str
+    width: int
+    height: int
+    profile: str
+    payload: str | None
+    baseline_decoders: tuple[DecoderResult, ...]
+    metrics: StaticAnalysis
+    scenarios: tuple[ScenarioResult, ...]
+    findings: tuple[Finding, ...]
