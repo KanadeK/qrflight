@@ -5,6 +5,7 @@ import cv2
 from typer.testing import CliRunner
 
 from qrflight.cli import app
+from qrflight.engine import CheckConfig, check_image
 
 runner = CliRunner()
 
@@ -63,3 +64,13 @@ def test_html_output_is_written_to_requested_file(qr_png: tuple[Path, str], tmp_
     assert result.exit_code == 0
     assert result.stdout == ""
     assert output.read_text(encoding="utf-8").startswith("<!doctype html>")
+
+
+def test_output_cannot_overwrite_input(qr_png: tuple[Path, str]) -> None:
+    path, payload = qr_png
+
+    result = runner.invoke(app, ["check", str(path), "--output", str(path)])
+
+    assert result.exit_code == 2
+    assert "must not overwrite" in result.stderr
+    assert check_image(path, CheckConfig(profile="quick"))[0].payload == payload

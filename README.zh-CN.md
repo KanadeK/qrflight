@@ -36,12 +36,10 @@ uv run qrflight check examples/healthy.png --profile quick
 uv run qrflight check examples/cropped.png --profile quick --fail-on warning
 
 # 不只要求“能扫”，还要求内容完全一致。
-uv run qrflight check examples/healthy.png \
-  --expect https://github.com/KanadeK/qrflight
+uv run qrflight check examples/healthy.png --expect https://github.com/KanadeK/qrflight
 
 # 生成无需联网、无 JavaScript 的自包含 HTML 证据报告。
-uv run qrflight check examples/healthy.png \
-  --format html --output healthy-report.html
+uv run qrflight check examples/healthy.png --format html --output healthy-report.html
 ```
 
 v0.1.0 发布后可直接安装 Release wheel：

@@ -57,7 +57,7 @@
 
 ## Task 8: Review and public release
 
-- [ ] Resolve independent correctness/architecture/security/performance review findings.
+- [x] Resolve independent correctness/architecture/security/performance review findings.
 - [ ] Verify clean history, authors, contributors, tag, CI and Release assets.
 - [ ] Send Gmail completion notification only after public verification.
 - Acceptance: every success criterion in `docs/spec.md` has recorded evidence.

@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 from pathlib import Path
 
 import cv2
@@ -55,3 +56,14 @@ def test_expected_payload_mismatch_is_an_error(qr_png: tuple[Path, str]) -> None
     ]
     assert len(mismatch) == 1
     assert mismatch[0].severity == "error"
+
+
+def test_text_report_escapes_terminal_control_characters(qr_png: tuple[Path, str]) -> None:
+    path, _ = qr_png
+    report, _ = check_image(path, CheckConfig(profile="quick"))
+    hostile = replace(report, input_name="bad\x1b[31m.png", payload="go\x1b[2J")
+
+    text_output = render_text(hostile)
+
+    assert "\x1b" not in text_output
+    assert "\\u001b" in text_output

@@ -49,12 +49,10 @@ uv run qrflight check examples/healthy.png --profile quick
 uv run qrflight check examples/cropped.png --profile quick --fail-on warning
 
 # Require the exact content, not merely "something decodable".
-uv run qrflight check examples/healthy.png \
-  --expect https://github.com/KanadeK/qrflight
+uv run qrflight check examples/healthy.png --expect https://github.com/KanadeK/qrflight
 
 # Write a self-contained offline evidence report.
-uv run qrflight check examples/healthy.png \
-  --format html --output healthy-report.html
+uv run qrflight check examples/healthy.png --format html --output healthy-report.html
 ```
 
 After v0.1.0 is released, install its wheel without cloning:

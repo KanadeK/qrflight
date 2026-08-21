@@ -17,6 +17,12 @@ def render_json(report: AnalysisReport) -> str:
 
 def render_text(report: AnalysisReport) -> str:
     """Render a concise terminal report."""
+    safe_input_name = json.dumps(report.input_name, ensure_ascii=False)
+    safe_payload = (
+        json.dumps(report.payload, ensure_ascii=False)
+        if report.payload is not None
+        else "unreadable"
+    )
     baseline = ", ".join(
         (
             f"{result.engine}=pass"
@@ -27,9 +33,9 @@ def render_text(report: AnalysisReport) -> str:
     )
     lines = [
         f"QRFlight {report.tool_version}",
-        f"Input: {report.input_name} ({report.input_format}, {report.width}x{report.height})",
+        f"Input: {safe_input_name} ({report.input_format}, {report.width}x{report.height})",
         f"Profile: {report.profile}",
-        f"Payload: {report.payload if report.payload is not None else 'unreadable'}",
+        f"Payload: {safe_payload}",
         f"Baseline: {baseline}",
     ]
     metrics = report.metrics
