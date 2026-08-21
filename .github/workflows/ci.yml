@@ -14,14 +14,14 @@ jobs:
   quality-and-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.0.1
         with:
           enable-cache: true
       - run: uv python install 3.13
       - run: uv sync --locked --extra dev --python 3.13
       - run: uv run --python 3.13 python scripts/verify.py
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v7.0.1
         with:
           name: qrflight-package
           path: dist/
@@ -29,8 +29,8 @@ jobs:
   windows-python-312:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.0.1
         with:
           enable-cache: true
       - run: uv python install 3.12
